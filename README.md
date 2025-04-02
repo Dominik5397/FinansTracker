@@ -17,6 +17,10 @@
 - 📈 Analizy i statystyki wydatków
 - 🔐 Uwierzytelnianie i autoryzacja z Firebase
 
+## 🌐 Wersja Online
+
+Aplikacja jest dostępna online pod adresem: [https://finanstracker-bdafb.web.app](https://finanstracker-bdafb.web.app)
+
 ## 🛠️ Technologie
 
 - ⚛️ React
@@ -237,7 +241,11 @@ Jestem pasjonatem technologii i programowania, szczególnie zainteresowanym rozw
 #### Kontakt
 
 - 🌐 [GitHub](https://github.com/Dominik5397)
-- 📧 Email: [kontakt@dominikburda.pl](mailto:kontakt@dominikburda.pl)
+- 📧 Email: [burdadominik81@gmail.com](mailto:burdadominik81@gmail.com)
+
+## 🌐 Wersja Online
+
+Aplikacja jest dostępna online pod adresem: [https://finanstracker-bdafb.web.app](https://finanstracker-bdafb.web.app)
 
 ---
 
