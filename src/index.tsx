@@ -5,14 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 // Komentujemy import BrowserRouter, ponieważ nie jest używany
 // import { BrowserRouter } from 'react-router-dom';
-
-// Próbujemy uruchomić aplikację nawet jeśli nie ma service workera
-let serviceWorkerRegistration;
-try {
-  serviceWorkerRegistration = require('./serviceWorkerRegistration');
-} catch (e) {
-  console.warn('Service Worker registration failed:', e);
-}
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -29,23 +22,7 @@ root.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 
-// Włączamy Service Worker tylko jeśli dostępny
-if (serviceWorkerRegistration) {
-  serviceWorkerRegistration.register({
-    onUpdate: (registration: ServiceWorkerRegistration) => {
-      // Gdy pojawi się nowa wersja, powiadom użytkownika
-      const waitingServiceWorker = registration.waiting;
-      
-      if (waitingServiceWorker) {
-        waitingServiceWorker.addEventListener("statechange", (event: Event) => {
-          const target = event.target as ServiceWorker;
-          if (target.state === "activated") {
-            // Nowa wersja jest gotowa, odśwież stronę
-            window.location.reload();
-          }
-        });
-        waitingServiceWorker.postMessage({ type: "SKIP_WAITING" });
-      }
-    },
-  });
-}
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note that this comes with some pitfalls.
+// Learn more about service workers: https://cra.link/PWA
+serviceWorkerRegistration.unregister();
