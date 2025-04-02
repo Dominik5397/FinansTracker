@@ -4,12 +4,12 @@ import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 import { 
   collection, 
   query, 
-  where,
-  onSnapshot,
   orderBy,
+  onSnapshot,
   addDoc,
   serverTimestamp,
-  limit
+  limit,
+  getDocs
 } from 'firebase/firestore';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth, db, getCategories } from './services/firebase';
